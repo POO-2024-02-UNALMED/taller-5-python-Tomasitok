@@ -12,16 +12,16 @@ class Zona:
         return len(self._animales)
     
     def getNombre(self):
-        return self.__nombre
+        return self._nombre
 
     def getZoo(self):
-        return self.__zoo
+        return self._zoo
 
     def getAnimales(self):
         return self.__animales
 
     def setNombre(self, nombre):
-        self.__nombre = nombre
+        self._nombre = nombre
 
     def setZoo(self, zoo):
-        self.__zoo = zoo
+        self._zoo = zoo

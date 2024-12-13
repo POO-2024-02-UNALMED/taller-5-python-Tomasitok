@@ -32,11 +32,11 @@ class Reptil(Animal):
     
     @staticmethod
     def getListado():
-        return Reptil.listado
+        return Reptil._listado
 
     @staticmethod
     def setListado(nuevoListado):
-        Reptil.listado = nuevoListado
+        Reptil._listado = nuevoListado
 
     def getColorEscamas(self):
         return self._colorEscamas

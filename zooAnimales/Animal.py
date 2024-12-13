@@ -1,40 +1,42 @@
 
-
+from gestion.zona import Zona
 
 class Animal:
     _totalAnimales = 0  
 
     def __init__(self, nombre=None, edad=0, habitat=None, genero=None):
-        self.__nombre = nombre
-        self.__edad = edad
-        self.__habitat = habitat
-        self.__genero = genero
+        self._nombre = nombre
+        self._edad = edad
+        self._habitat = habitat
+        self._genero = genero
+        self._zona = None
         Animal._totalAnimales += 1
 
-        @staticmethod
-        def totalPorTipo():
-            from zooAnimales.mamifero import Mamifero
-            from zooAnimales.ave import Ave
-            from zooAnimales.reptil import Reptil
-            from zooAnimales.pez import Pez
-            from zooAnimales.anfibio import Anfibio
-            return f"Mamíferos: {Mamifero.getListado().size()}\n"
-            f"Aves: {Ave.getListado().size()}\n"
-            f"Reptiles: {Reptil.getListado().size()}\n"
-            f"Peces: {Pez.getListado().size()}\n"
-            f"Anfibios: {Anfibio.getListado().size()}"
+    @staticmethod
+    def totalPorTipo():
+        from zooAnimales.mamifero import Mamifero
+        from zooAnimales.ave import Ave
+        from zooAnimales.reptil import Reptil
+        from zooAnimales.pez import Pez
+        from zooAnimales.anfibio import Anfibio
 
-        def movimiento(self):
-            return "desplazarse";
+        return (f"Mamiferos : {len(Mamifero.getListado())}\n"
+                f"Aves : {len(Ave.getListado())}\n"
+                f"Reptiles : {len(Reptil.getListado())}\n"
+                f"Peces : {len(Pez.getListado())}\n"
+                f"Anfibios : {len(Anfibio.getListado())}")
 
-        def __str__(self):
-            if self.__zona is None:
-                return (f"Mi nombre es {self._nombre}, tengo una edad de {self._edad}, habito en {self._habitat} "
-                        f"y mi genero es {self._genero}.")
-            else:
-                return (f"Mi nombre es {self._nombre}, tengo una edad de {self.__edad}, habito en {self._habitat} "
-                        f"y mi genero es {self._genero}, la zona en la que me ubico es {self._zona.get_nombre()}, "
-                        f"en el {self._zona.get_zoo().get_nombre()}.")
+    def movimiento(self):
+        return "desplazarse";
+
+    def toString(self):
+        if self._zona is None:
+            return (f"Mi nombre es {self._nombre}, tengo una edad de {self._edad}, habito en {self._habitat} "
+                    f"y mi genero es {self._genero}")
+        else:
+            return (f"Mi nombre es {self._nombre}, tengo una edad de {self._edad}, habito en {self._habitat} "
+                    f"y mi genero es {self._genero}, la zona en la que me ubico es {self._zona.get_nombre()}, "
+                    f"en el {self._zona.get_zoo().get_nombre()}")
 
     @staticmethod
     def getTotalAnimales():

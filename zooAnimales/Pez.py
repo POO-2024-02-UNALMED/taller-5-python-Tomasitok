@@ -32,11 +32,11 @@ class Pez(Animal):
     
     @staticmethod
     def getListado():
-        return Pez.listado
+        return Pez._listado
 
     @staticmethod
     def setListado(nuevoListado):
-        Pez.listado = nuevoListado
+        Pez._listado = nuevoListado
 
     def getColorEscamas(self):
         return self._colorEscamas

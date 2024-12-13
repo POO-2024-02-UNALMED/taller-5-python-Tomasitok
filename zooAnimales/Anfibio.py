@@ -22,7 +22,7 @@ class Anfibio(Animal):
     
     @staticmethod
     def crearRana(nombre, edad, genero):
-        Anfibio.salamandras += 1
+        Anfibio.ranas += 1
         return Anfibio(nombre, edad, "selva", genero, "rojo", True)
 
     @staticmethod
@@ -32,11 +32,11 @@ class Anfibio(Animal):
     
     @staticmethod
     def getListado():
-        return Anfibio.listado
+        return Anfibio._listado
 
     @staticmethod
     def setListado(nuevoListado):
-        Anfibio.listado = nuevoListado
+        Anfibio._listado = nuevoListado
 
     def getColorPiel(self):
         return self._colorPiel

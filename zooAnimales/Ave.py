@@ -1,7 +1,7 @@
 from zooAnimales.animal import Animal
 
 class Ave(Animal):
-    alcones = 0
+    halcones = 0
     aguilas = 0
     _listado = []
 
@@ -31,11 +31,11 @@ class Ave(Animal):
     
     @staticmethod
     def getListado():
-        return Ave.listado
+        return Ave._listado
 
     @staticmethod
     def setListado(nuevoListado):
-        Ave.listado = nuevoListado
+        Ave._listado = nuevoListado
 
     def getColorPlumas(self):
         return self._colorPlumas
